@@ -3,9 +3,9 @@
 This repo hard forks from [golang.org/x/sync/singleflight](https://pkg.go.dev/golang.org/x/sync/singleflight) and support generics to the Group and Key type. Comparing to the original version of singleflight, you are free to use any `comparable` key type instead of `string` only.
 
 ## Install
-
+```
 go get github.com/serkodev/singleflight-any@latest
-
+```
 ## Usage
 
 `string` key, `string` value
