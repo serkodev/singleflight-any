@@ -32,6 +32,19 @@ func TestDo(t *testing.T) {
 	}
 }
 
+func TestDoIntKey(t *testing.T) {
+	var g Group[int, string]
+	v, err, _ := g.Do(1, func() (string, error) {
+		return "bar", nil
+	})
+	if got, want := fmt.Sprintf("%v (%T)", v, v), "bar (string)"; got != want {
+		t.Errorf("Do = %v; want %v", got, want)
+	}
+	if err != nil {
+		t.Errorf("Do error = %v", err)
+	}
+}
+
 func TestDoErr(t *testing.T) {
 	var g Group[string, any]
 	someErr := errors.New("Some error")
