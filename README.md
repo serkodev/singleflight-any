@@ -8,7 +8,7 @@ go get github.com/serkodev/singleflight-any@latest
 
 ## Usage
 
-`string` key
+`string` key, `string` value
 ```golang
 var g Group[string, string]
 v, _, _ := g.Do("foo", func() (string, error) {
@@ -16,7 +16,7 @@ v, _, _ := g.Do("foo", func() (string, error) {
 })
 ```
 
-`int` as key
+`int` key, `string` value
 ```golang
 var g Group[int, string]
 v, _, _ := g.Do(123, func() (string, error) {
